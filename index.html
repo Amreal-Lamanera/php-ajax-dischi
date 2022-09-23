@@ -24,7 +24,16 @@
                 <img src="./img/lama.png" alt="">
 
                 <div class="filters">
+                    <select name="genreSelect" v-model="genre" @change="fetchAlbumsFiltered" class="rounded me-3"
+                        @focusin="openGen = true, focusGen = true" @focusout="openGen = false, focusGen = false"
+                        @click="clickHandlerGen">
 
+                        <option value="" default>{{ !openGen? defGen : '' }}Tutti</option>
+
+                        <option v-for="genre,i in getGenres" :value="genre">
+                            {{ `${!openGen? defGen : ''} ${genre}` }}
+                        </option>
+                    </select>
                 </div>
 
             </header>
