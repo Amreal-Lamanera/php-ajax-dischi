@@ -20,7 +20,7 @@ const app = new Vue({
     },
     methods: {
         fetchAlbums() {
-            axios.get('http://localhost/esercitazioni/php-ajax-dischi/api/')
+            axios.get('./api/')
                 .then(res => {
                     // console.log(res.data);
                     const { response } = res.data;
@@ -30,7 +30,7 @@ const app = new Vue({
                 })
         },
         fetchAlbumsFiltered() {
-            axios.get('http://localhost/esercitazioni/php-ajax-dischi/api/indexFiltered.php', {
+            axios.get('./api/indexFiltered.php', {
                 params: {
                     genre: this.genre,
                 }
