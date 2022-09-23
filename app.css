@@ -142,3 +142,12 @@ main .grid {
     justify-content: center;
     padding: 1rem 0;
 }
+
+/* FOOTER */
+footer {
+    background-color: var(--light);
+    padding: 1rem;
+    color: grey;
+    display: flex;
+    justify-content: flex-end;
+}
