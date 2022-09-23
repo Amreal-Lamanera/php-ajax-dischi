@@ -1,0 +1,137 @@
+:root {
+    --light: #2E3A46;
+    --dark: #1E2D3B;
+}
+
+* {
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* HEADER */
+header {
+    padding: 1rem;
+    background-color: var(--light);
+}
+
+header img {
+    height: 50px;
+}
+
+header select {
+    background-color: var(--dark);
+    color: #FFF;
+    padding: 0.5rem;
+    width: 200px;
+}
+
+/* MAIN */
+main {
+    flex-grow: 1;
+    background-color: var(--dark);
+    overflow: auto;
+}
+
+main .grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+    align-items: center;
+}
+
+@media (min-width: 576px) {
+    main .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    main .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    main .grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    main .grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+.my_card {
+    background-color: var(--light);
+    padding: 1rem;
+    border-radius: 0;
+    text-align: center;
+    color: grey;
+    height: 100%;
+    min-height: 360px;
+}
+
+.my_card:hover .card-img-top::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.my_card .btn {
+    display: none;
+}
+
+.my_card:hover .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    border: 5px solid #FFF;
+    border-radius: 100%;
+    position: absolute;
+    height: 4rem;
+    width: 4rem;
+    aspect-ratio: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    font-size: 2rem;
+}
+
+.my_card h5 {
+    color: #FFF;
+    text-transform: uppercase;
+}
+
+.my_card .card-img-top {
+    cursor: pointer;
+}
+
+.my_card .card-img-top img {
+    width: 100%;
+}
+
+.my_card .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem 0;
+}
